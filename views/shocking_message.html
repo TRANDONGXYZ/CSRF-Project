@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Non CSRF website</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .form-signin {
+            width: 100%;
+            max-width: 800px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        .form-signin .checkbox {
+            font-weight: 400;
+        }
+
+        .form-signin .form-control {
+            position: relative;
+            box-sizing: border-box;
+            height: auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .form-signin .form-control:focus {
+            z-index: 2;
+        }
+
+        .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .form-group {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body class="text-center" onload="getTokenAndInject()">
+<form class="form-signin" id="contentForm" method="POST" action="http://127.0.0.1:3000/posts">
+    <h1>Has science gone too far?</h1>
+    <h3>Researchers have taught this horse how to do karate!</h3>
+    <img src="https://www.paarden.vlaanderen/media/cache/resolve/xlarge/media/news/5b11bf51-4099-11ed-acbe-005056976786/8jdkw8id8r.jpg">
+    <button class="btn btn-lg btn-primary btn-block mt-5" type="submit">Read more</button>
+    <div class="form-group">
+        <label for="inputContent">Content</label>
+        <textarea class="form-control" id="inputContent" name="inputContent" rows="3">This horse knows karate!</textarea>
+    </div>
+</form>
+</body>
+</html>
